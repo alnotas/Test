@@ -2,26 +2,25 @@
 
 namespace DiscountTA
 {
-   enum TdscType { dscFixed, dscPercentage }
-   class clDiscount
-   {
-      private string dscDescription;
-      private TdscType dscType;
-      private double dscAmount;
-      public string Description { get { return dscDescription; } }
-      public double GetDiscountAmount(double inGross)
-      {
-         if(dscType == TdscType.dscFixed)
-            return dscAmount;
-         else
-            return Math.Round(inGross * (dscAmount / 100.00), 2);
-      }
-      public clDiscount(string inDescription, TdscType inType, double inAmount)
-      {
-         dscDescription = inDescription;
-         dscType = inType;
-         dscAmount = inAmount;
-      }
-
-   }
+    enum TdscType { dscFixed, dscPercentage }
+    class clDiscount
+    {
+        private string discountName;
+        private TdscType discountType;
+        private double discountValue;
+        public string DiscountName { get { return discountName; } }
+        public clDiscount(string inDiscountName, TdscType inDiscountType, double inValue)
+        {
+            discountName = inDiscountName;
+            discountType = inDiscountType;
+            discountValue = inValue;
+        }
+        public double GetDiscountAmount(double inGross)
+        {
+            if (discountType == TdscType.dscFixed)
+                return discountValue;
+            else
+                return Math.Round(inGross * (discountValue / 100.00), 2);
+        }
+    }
 }
