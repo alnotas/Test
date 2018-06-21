@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DiscountTA.clDiscount">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAEAiAAAAAAAAAAAAAAAgAAABAAAAAQAAAA=</HashCode>
+      <FileName>clDiscount.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="JSONObject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DiscountTA.clDiscounts">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAABAAAAAQAAAA=</HashCode>
+      <FileName>clOrderDiscounts.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="JSONObject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DiscountTA.JSONDiscount">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAQAAAA=</HashCode>
+      <FileName>dscJSON.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Discounts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DiscountTA.JSONDiscountItem">
+    <Position X="3.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAQAAAAAQAAAAQAgAAAAAAA=</HashCode>
+      <FileName>dscJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="10" />
+</ClassDiagram>

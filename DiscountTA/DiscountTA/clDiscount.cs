@@ -39,7 +39,7 @@ namespace DiscountTA
          {
             JSONDiscountItem JSONObj = new JSONDiscountItem();
             JSONObj.Name = discountName;
-            JSONObj.Type = (discountType == TdscType.dscFixed ? "Fixed Amount" : "Percentage");
+            JSONObj.Type = (discountType == TdscType.dscFixed ? "Fixed amount" : "Percentage");
             JSONObj.Value = discountValue;
             JSONObj.Gross = discountGross;
             JSONObj.Total = discountTotal;
