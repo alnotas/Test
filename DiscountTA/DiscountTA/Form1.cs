@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -80,6 +81,7 @@ namespace DiscountTA
 
       private void MainForm_Shown(object sender, EventArgs e)
       {
+         //Initial Values for Test shake
          DataGridViewRow r1 = new DataGridViewRow();
          r1.CreateCells(dataGridView1);
          r1.Cells[0].Value = true;
@@ -115,23 +117,37 @@ namespace DiscountTA
 
       private void button1_Click(object sender, EventArgs e)
       {
-         clOrderDiscounts TotalDsc = new clOrderDiscounts(Convert.ToDouble(tbTotalAmount.Text));
+         //Preparing Input JSON. This will be normally handled by the Application Server
+         JSONDiscount JSONInput = new JSONDiscount();
+         JSONInput.TotalGross = Convert.ToDouble(tbTotalAmount.Text);
          foreach(DataGridViewRow curRow in dataGridView1.Rows)
          {
+            //Order of individual discount creation is also the priority
             if(curRow.Cells[0].Value == null)
                continue;
             if(Convert.ToBoolean(Convert.ToInt32(curRow.Cells[0].Value)))
             {
-               TotalDsc.Add(new clDiscount((string)curRow.Cells[1].Value,
-                                               ((string)curRow.Cells[2].Value == "Fixed amount" ? TdscType.dscFixed : TdscType.dscPercentage),
-                                               Convert.ToDouble(curRow.Cells[3].Value)
-                                               )
-                                            );
+               JSONDiscountItem JSONDiscount = new JSONDiscountItem();
+               JSONDiscount.Name = (string)curRow.Cells[1].Value;
+               JSONDiscount.Type = (string)curRow.Cells[2].Value;
+               JSONDiscount.Value = Convert.ToDouble(curRow.Cells[3].Value);
+               JSONInput.Discounts.Add(JSONDiscount);
             }
          }
-         double totalDiscount = TotalDsc.CalcDiscount();
+         // --------------------------------------------------//
+         string inputJSON = JsonConvert.SerializeObject(JSONInput, Formatting.Indented);
+         textBox1.Text = inputJSON;
+         clDiscounts TotalDsc = new clDiscounts(inputJSON); //New collection of discounts 
+         double totalDiscount = TotalDsc.TotalDiscount;  //Calculating total discount
+         //Output JSON is to be returned to the Application Server so to be commited to the Database
+         string outputJSON = JsonConvert.SerializeObject(TotalDsc.JSONObject, Formatting.Indented);
+         textBox2.Text = outputJSON;
+         // Verbal output
          tbResults.Clear();
-         tbResults.AppendText(TotalDsc.visualDiscount);
+         foreach(JSONDiscountItem discount in TotalDsc.JSONObject.Discounts)
+         {
+            tbResults.AppendText(discount.Name + ": -" + discount.Total.ToString("0.00 €\r\n"));
+         }
          tbResults.AppendText("--------------------------\r\n");
          tbResults.AppendText("Total Discounts(" + TotalDsc.Count.ToString() + ") : " + totalDiscount.ToString("0.00 €"));
       }
