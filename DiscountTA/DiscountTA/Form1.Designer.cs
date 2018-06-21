@@ -29,10 +29,10 @@
       private void InitializeComponent()
       {
          this.components = new System.ComponentModel.Container();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+         System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
          this.label1 = new System.Windows.Forms.Label();
          this.tbTotalAmount = new System.Windows.Forms.TextBox();
@@ -59,11 +59,11 @@
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(39, 22);
+         this.label1.Location = new System.Drawing.Point(19, 22);
          this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(70, 13);
+         this.label1.Size = new System.Drawing.Size(90, 13);
          this.label1.TabIndex = 0;
-         this.label1.Text = "Total Amount";
+         this.label1.Text = "Total Order Gross";
          // 
          // tbTotalAmount
          // 
@@ -120,21 +120,21 @@
          // 
          // Amount
          // 
-         dataGridViewCellStyle13.Format = "N2";
-         dataGridViewCellStyle13.NullValue = null;
-         this.Amount.DefaultCellStyle = dataGridViewCellStyle13;
+         dataGridViewCellStyle1.Format = "N2";
+         dataGridViewCellStyle1.NullValue = null;
+         this.Amount.DefaultCellStyle = dataGridViewCellStyle1;
          this.Amount.HeaderText = "Amount";
          this.Amount.Name = "Amount";
          this.Amount.Width = 50;
          // 
          // Delete
          // 
-         dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-         dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-         dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-         this.Delete.DefaultCellStyle = dataGridViewCellStyle14;
+         dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+         dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+         dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+         this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
          this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
          this.Delete.HeaderText = "Delete";
          this.Delete.Name = "Delete";
@@ -144,12 +144,12 @@
          // 
          // priorityUp
          // 
-         dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-         dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-         dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-         this.priorityUp.DefaultCellStyle = dataGridViewCellStyle15;
+         dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+         dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+         dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+         this.priorityUp.DefaultCellStyle = dataGridViewCellStyle3;
          this.priorityUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
          this.priorityUp.HeaderText = "Up";
          this.priorityUp.Name = "priorityUp";
@@ -159,12 +159,12 @@
          // 
          // priorityDown
          // 
-         dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-         dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-         dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-         dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-         this.priorityDown.DefaultCellStyle = dataGridViewCellStyle16;
+         dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+         dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+         dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+         dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+         this.priorityDown.DefaultCellStyle = dataGridViewCellStyle4;
          this.priorityDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
          this.priorityDown.HeaderText = "Down";
          this.priorityDown.Name = "priorityDown";
